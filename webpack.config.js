@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/script.ts',
+  //entry: './src/script.ts',
+  entry: './src/estimate_image_file.ts',
   module: {
     rules: [
       {
@@ -25,9 +26,15 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
+     static: [
+      {
+        directory: path.join(__dirname, 'dist'),
+      },
+      {
+        directory: path.join(__dirname, 'public'),
+        publicPath: '/public',
+      },
+    ],
     compress: true,
     port: 9000,
     hot: true,
