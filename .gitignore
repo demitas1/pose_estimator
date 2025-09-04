@@ -51,3 +51,6 @@ typings/
 .vscode/
 .idea/
 *.sublime-workspace
+
+# python venv
+venv/
